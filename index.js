@@ -139,7 +139,11 @@ client.on("message", async function(message) {
 			console.error(err);
 			channel.send("Error while trying to add idea, try again");
 		});
-		console.log(ideas);
+
+		const img = await generateMessage(user, idea);
+		const attachment = new Discord.MessageAttachment(img, 'idea.png');
+		channel.send(null, attachment);
+
 		console.log("Done!");
 	} else {
 
