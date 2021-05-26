@@ -145,6 +145,12 @@ client.on("message", async function(message) {
 		channel.send(null, attachment);
 
 		console.log("Done!");
+	} else if (args[1] === "-users" || args[1] === "-u") {
+		const embed = new Discord.MessageEmbed()
+			.setColor('#0099ff')
+			.setTitle('Cached users')
+			.setDescription(Object.keys(regUsers).join("\n"));
+		channel.send(embed);
 	} else {
 
 		const idea = ideas[Math.floor(Math.random() * ideas.length)];
