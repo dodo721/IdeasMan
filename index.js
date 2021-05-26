@@ -145,7 +145,7 @@ client.on("message", async function(message) {
 		channel.send(null, attachment);
 
 		console.log("Done!");
-	} else if (args[1] === "-users" || args[1] === "-u") {
+	} else if (args.length > 1 && (args[1] === "-users" || args[1] === "-u")) {
 		const embed = new Discord.MessageEmbed()
 			.setColor('#0099ff')
 			.setTitle('Cached users')
